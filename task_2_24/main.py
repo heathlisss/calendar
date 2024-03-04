@@ -17,7 +17,7 @@ def write_calendar_to_file(previous_month, current_month):
             count += 1
         for i in range(1, current_month + 1):
             file.write(str(i) + ' ')
-            if i < 10 :
+            if i < 10:
                 file.write(' ')
             count += 1
             if count == 7:
@@ -41,13 +41,18 @@ mon, god = read_lists_from_file('test.txt')
 
 # код месяца
 m = int({
-            1 or 10: 1,
+            1: 1,
+            10: 1,
             5: 2,
             8: 3,
-            2 or 3 or 11: 4,
+            2: 4,
+            3: 4,
+            11: 4,
             6: 5,
-            12 or 9: 6,
-            4 or 7: 0
+            12: 6,
+            9: 6,
+            4: 0,
+            7: 0
         }.get(mon, None))
 
 # код года
